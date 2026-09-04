@@ -1,0 +1,9 @@
+# Lint configuration for CI. Deliberately narrow: E (pycodestyle), F (pyflakes,
+# which is the one that catches real defects such as undefined names and unused
+# imports) and I (import ordering). Style beyond that is not enforced, because a
+# lint config that fails on taste gets ignored rather than fixed.
+
+line-length = 120
+
+[lint]
+select = ["E", "F", "I"]

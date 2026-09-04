@@ -1,0 +1,16 @@
+The MIT licence in LICENSE covers the code in this repository.
+
+Two things in this repository are Ajman University's, not ours, and are not
+covered by that grant:
+
+  data/raw/collected.json   Scholarship content collected from Ajman University's
+                            publicly published pages and its publicly downloadable
+                            Policies and Procedures Manual. The source URLs are
+                            listed under "Data sources" in README.md. The text is
+                            AU's and remains AU's.
+
+  static/logo3.png          The Ajman University logo and wordmark, an AU trademark,
+                            used here because this was built for AU.
+
+This project was built during a 2026 internship with Ajman University's Office of
+Information Technology and is published with the supervisor's permission.

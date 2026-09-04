@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AU Scholarship Assistant</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header id="app-header">
+    <div id="app-header-inner">
+      <div id="app-brand">
+        <img id="app-logo" src="/static/logo3.png" alt="Ajman University">
+        <div>
+          <div id="app-title">Scholarship Assistant</div>
+          <div id="app-subtitle">Scholarships &amp; financial aid</div>
+        </div>
+      </div>
+      <button id="lang-toggle" type="button">العربية</button>
+    </div>
+  </header>
+  <main id="chat">
+    <div id="messages"></div>
+    <form id="chat-form">
+      <input id="question" type="text" autocomplete="off"
+             placeholder="Ask about AU scholarships…">
+      <button type="submit" id="send-btn">Send</button>
+    </form>
+  </main>
+  <script src="/static/chat.js"></script>
+</body>
+</html>

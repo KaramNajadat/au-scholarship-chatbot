@@ -1,0 +1,162 @@
+/* Admin log browser for the AU Scholarship Chatbot. Read-only. */
+
+:root {
+  --au-orange: #F29F00;
+  --au-blue:   #39A9DC;
+  --text:      #000000;
+  --border:    #E0E0E0;
+  --page-bg:   #F7F7F8;
+  --muted:     #666666;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--page-bg);
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: var(--text);
+}
+
+/* header */
+#admin-header {
+  background: #FFFFFF;
+  border-bottom: 3px solid var(--au-orange);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+}
+
+#admin-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#admin-title { font-size: 20px; font-weight: bold; }
+#admin-subtitle { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+#back-link {
+  color: var(--au-orange);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+#back-link:hover { text-decoration: underline; }
+
+/* layout: two columns */
+#admin-main {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  gap: 16px;
+}
+
+#sessions-panel {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#turns-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.panel-title {
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--muted);
+  padding: 4px 2px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#refresh-btn {
+  background: var(--au-orange);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#refresh-btn:hover { filter: brightness(0.95); }
+
+#sessions-list, #turns-list {
+  flex: 1;
+  overflow-y: auto;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+}
+
+/* session rows */
+.session-row {
+  width: 100%;
+  text-align: left;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: inherit;
+}
+.session-row:hover { border-color: var(--au-blue); background: #F7FCFF; }
+.session-row.active { border-color: var(--au-blue); background: #EAF6FC; }
+
+.sess-id { font-weight: bold; font-size: 14px; }
+.sess-meta { font-size: 12px; color: var(--muted); }
+
+.badge {
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.badge.escalated {
+  background: #FDECEA;
+  color: #B3261E;
+  border: 1px solid #F5C6CB;
+}
+
+/* turns */
+.turn-card {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  background: #FFFFFF;
+}
+.turn-q { font-weight: bold; margin-bottom: 6px; white-space: pre-wrap; word-wrap: break-word; }
+.turn-a { white-space: pre-wrap; word-wrap: break-word; }
+.turn-sources { font-size: 12px; color: var(--au-blue); margin-top: 8px; word-wrap: break-word; }
+.turn-meta { font-size: 12px; color: var(--muted); margin-top: 8px; }
+
+.empty, .error { color: var(--muted); padding: 12px; font-size: 14px; }
+.error { color: #B3261E; }

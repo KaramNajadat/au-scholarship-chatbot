@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — AU Scholarship Chatbot</title>
+  <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+  <header id="admin-header">
+    <div id="admin-header-inner">
+      <div>
+        <div id="admin-title">Admin — Logged Sessions</div>
+        <div id="admin-subtitle">AU Scholarship Chatbot — read-only conversation log</div>
+      </div>
+      <a id="back-link" href="/">← Back to chat</a>
+    </div>
+  </header>
+
+  <main id="admin-main">
+    <section id="sessions-panel">
+      <div class="panel-title">
+        Sessions <button id="refresh-btn" type="button">Refresh</button>
+      </div>
+      <div id="sessions-list"></div>
+    </section>
+
+    <section id="turns-panel">
+      <div class="panel-title" id="turns-title">Select a session</div>
+      <div id="turns-list"></div>
+    </section>
+  </main>
+
+  <script src="/static/admin.js"></script>
+</body>
+</html>
